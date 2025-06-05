@@ -31,11 +31,11 @@ A modular pipeline for automatic annotation of chip defect datasets using Ground
 
 Below is an example of the annotation pipeline result:
 
-| Original Image | True Mask | Prediction Result | YOLOv8 |
+| Original Image | True Mask | Prediction Result |
 |----------------|-------------------------|-------------|--------------|
-| ![](test_data/class1/0595.PNG) | ![](test_data/class1/true_masks/0595_label.PNG) | ![](test_data/class1/validation_vis_sam/0595_sam_validation.png) | ![](test_data/class1/outputs/yolo/0595.txt) |
-| ![](test_data/class2/0578.PNG) | ![](test_data/class2/true_masks/0578_label.PNG) | ![](test_data/class2/validation_vis_sam/0578_sam_validation.png) | ![](test_data/class2/outputs/yolo/0578.txt) |
-| ![](test_data/class3/0576.PNG) | ![](test_data/class3/true_masks/0576_label.PNG) | ![](test_data/class3/validation_vis_sam/0576_sam_validation.png) | ![](test_data/class3/outputs/yolo/0576.txt) |
+| ![](test_data/class1/0595.PNG) | ![](test_data/class1/true_masks/0595_label.PNG) | ![](test_data/class1/validation_vis_sam/0595_sam_validation.png) |
+| ![](test_data/class2/0578.PNG) | ![](test_data/class2/true_masks/0578_label.PNG) | ![](test_data/class2/validation_vis_sam/0578_sam_validation.png) |
+| ![](test_data/class3/0576.PNG) | ![](test_data/class3/true_masks/0576_label.PNG) | ![](test_data/class3/validation_vis_sam/0576_sam_validation.png) |
 
 > 📝 Images above illustrate the transition from raw image → bounding box → mask → YOLO format.
 
@@ -103,13 +103,28 @@ output_dir = "test_data/class*/outputs"
 main(input_dir, output_dir, prompt="crack", class_name="class2")
 ```
 
+## 🔃 Clone with Submodules
+
+If you are cloning this repository for the first time, make sure to initialize submodules:
+
+```bash
+git clone https://github.com/Ching725/SmartLabeler.git
+cd SmartLabeler
+git submodule update --init --recursive
+
+#### 📦 小補充
+你目前的 Git 狀態可以用：
+
+```bash
+git submodule status
+
+
 ## 📦 Export Format Details（YOLOv8 Label Format）
 
-```markdown
 - Segmentation labels are exported to `.txt` files in YOLOv8 format: class_id x1 y1 x2 y2 x3 y3 … xn yn
 - Coordinates are normalized (0~1).
 - Each mask is polygon-approximated from binary mask.
-```
+
 
 ## 🧪 Features
 - ✅ Automatically detects and segments regions using large vision-language models
