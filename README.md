@@ -32,7 +32,7 @@ A modular pipeline for automatic annotation of chip defect datasets using Ground
 Below is an example of the annotation pipeline result:
 
 | Original Image | True Mask | Prediction Result |
-|----------------|-------------------------|-------------|--------------|
+|----------------|-------------------------|-------------|
 | ![](test_data/class1/0595.PNG) | ![](test_data/class1/true_masks/0595_label.PNG) | ![](test_data/class1/validation_vis_sam/0595_sam_validation.png) |
 | ![](test_data/class2/0578.PNG) | ![](test_data/class2/true_masks/0578_label.PNG) | ![](test_data/class2/validation_vis_sam/0578_sam_validation.png) |
 | ![](test_data/class3/0576.PNG) | ![](test_data/class3/true_masks/0576_label.PNG) | ![](test_data/class3/validation_vis_sam/0576_sam_validation.png) |
@@ -111,13 +111,13 @@ If you are cloning this repository for the first time, make sure to initialize s
 git clone https://github.com/Ching725/SmartLabeler.git
 cd SmartLabeler
 git submodule update --init --recursive
-
+```
 #### 📦 小補充
 你目前的 Git 狀態可以用：
 
 ```bash
 git submodule status
-
+```
 
 ## 📦 Export Format Details（YOLOv8 Label Format）
 
